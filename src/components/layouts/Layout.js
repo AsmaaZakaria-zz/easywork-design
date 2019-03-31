@@ -4,7 +4,9 @@ import { withStyles, CssBaseline } from '@material-ui/core';
 
 import Header from './Header';
 import Drawer from './Drawer';
+import Banner from './Banner';
 
+import Services from '../../containers/Services';
 
 const drawerWidth = '60%';
 
@@ -31,14 +33,21 @@ const styles = theme => ({
       display: 'none',
     },
   },
-  toolbar: theme.mixins.toolbar,
+  toolbar: {
+    marginTop: '25px',
+  },
   drawerPaper: {
     width: drawerWidth,
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing.unit * 3,
+    // padding: theme.spacing.unit * 3,
   },
+  banner: {
+    height: '600px',
+    backgroundColor: '#252584',
+    display: 'flex',
+  }
 });
 
 class Layout extends React.Component {
@@ -67,8 +76,8 @@ class Layout extends React.Component {
           theme={theme}
         />
         <main className={classes.content}>
-          <div className={classes.toolbar} />
-          {/*CONTENTS*/}
+          <Banner classes={classes}/>
+          <Services />
         </main>
       </div>
     );
