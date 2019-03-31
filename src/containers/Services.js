@@ -13,9 +13,14 @@ const styles = theme => ({
     width: '75%',
     margin: 'auto',
   },
+  contentContainer: {
+    [theme.breakpoints.down('md')]: {
+      textAlign: 'center',
+    },
+  },
   image: {
     width: 750,
-    maxWidth: '75vw',
+    maxWidth: '80vw',
   },
 });
 
@@ -23,12 +28,12 @@ function Services(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <Grid container className={classes.gridContainer} sm={12}>
+      <Grid container className={classes.gridContainer} sm={12} justify="center" alignItems="center">
         <Grid item>
           <img src={content1} alt="content" className={classes.image}/>
         </Grid>
         <Grid item sm>
-          <div style={{paddingTop: '100px'}}>
+          <div className={classes.contentContainer}>
             <Typography component="h3" variant="h4" gutterBottom color="primary">
               We can give you our best user experience to your system
             </Typography>
@@ -42,9 +47,9 @@ function Services(props) {
           </div>
         </Grid>
       </Grid>
-      <Grid container className={classes.gridContainer} style={{paddingTop: '30px'}}>
+      <Grid container className={classes.gridContainer} style={{paddingTop: '30px'}} sm={12} justify="center" alignItems="center" spacing={0}>
         <Grid item sm>
-          <div style={{paddingTop: '75px'}}>
+          <div className={classes.contentContainer}>
             <Typography component="h3" variant="h4" gutterBottom color="primary">
               Easy access.
               Whenever, wherever you want
@@ -58,7 +63,7 @@ function Services(props) {
             </Typography>
           </div>
         </Grid>
-        <Grid item sm>
+        <Grid item>
           <img src={content2} alt="content" className={classes.image}/>
         </Grid>
       </Grid>
