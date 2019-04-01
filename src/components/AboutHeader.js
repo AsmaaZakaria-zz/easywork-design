@@ -8,6 +8,10 @@ const styles = theme => ({
   },
   container: {
     paddingLeft: 200,
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: 10,
+      alignItems: 'end'
+    },
   },
   icon: {
     backgroundColor: 'black',
@@ -18,6 +22,17 @@ const styles = theme => ({
   header: {
     paddingLeft: 50,
     fontSize: 35,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 25,
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: 30,
+    },
+  },
+  headerContainer: {
+    [theme.breakpoints.down('sm')]: {
+      width: '89%',
+    },
   },
   img: {
     paddingTop: 12,
@@ -34,7 +49,7 @@ const AboutHeader = ({ classes, header, icon, iconColor}) => {
             <img src={icon} alt="header-icon" className={classes.img}/>
           </div>
         </Grid>
-        <Grid item sm={5}>
+        <Grid item sm={7} className={classes.headerContainer}>
           <Typography className={classes.header} variant="h4" gutterBottom>
             {header}
           </Typography>
