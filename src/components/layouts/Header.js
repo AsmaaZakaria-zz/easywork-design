@@ -11,7 +11,7 @@ const Header = ({handleDrawerToggle, classes}) => {
   return (
     <div className={classes.root}>
       <AppBar position="static" style={{backgroundColor: '#252584'}}>
-        <Toolbar style={{marginTop: '25px'}}>
+        <Toolbar className={classes.toolbar}>
           <IconButton
             color="inherit"
             aria-label="Open drawer"
