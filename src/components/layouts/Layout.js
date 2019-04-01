@@ -7,6 +7,7 @@ import Drawer from './Drawer';
 import Banner from './Banner';
 
 import Services from '../../containers/Services';
+import Partners from '../../containers/Partners';
 import About from '../../screen/About';
 
 const drawerWidth = '60%';
@@ -80,6 +81,7 @@ class Layout extends React.Component {
           <Banner classes={classes}/>
           <Services />
           <About />
+          <Partners />
         </main>
       </div>
     );
