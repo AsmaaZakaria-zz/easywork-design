@@ -13,6 +13,8 @@ import microsoft from '../images/partners/microsoft.PNG';
 
 const PARTNERS = [apple, airbnb, google, nvidia, tesla, samsung, facebook, microsoft];
 
+// TODO:
+// ADD ANIMATION
 
 const styles = theme => ({
   root: {
@@ -32,9 +34,9 @@ function Partners(props) {
         We've worked with
       </Typography>
       <div className={classes.layout}>
-          <Grid container spacing={40} style={{marginTop: 20}} justify="center" alignItems="center">
+          <Grid container style={{marginTop: 20}} justify="center" alignItems="center">
             {PARTNERS.map(part => (
-              <Grid item key={part}>
+              <Grid item key={part} style={{marginRight: 20}}>
                 <img src={part} alt={part}/>
               </Grid>
             ))}

@@ -8,7 +8,7 @@ import Banner from './Banner';
 // import Footer from './Footer';
 
 import Services from '../../containers/Services';
-// import Partners from '../../containers/Partners';
+import Partners from '../../containers/Partners';
 // import ContactUs from '../../containers/Contact';
 import About from '../../screen/About';
 
@@ -77,8 +77,8 @@ class Layout extends React.Component {
           <Banner/>
           <Services />
           <About />
-          {/*<Partners />
-          <ContactUs />
+          <Partners />
+          {/*<ContactUs />
           <Footer />*/}
         </main>
       </div>
