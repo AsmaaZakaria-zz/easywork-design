@@ -5,12 +5,12 @@ import { withStyles, CssBaseline } from '@material-ui/core';
 import Header from './Header';
 import Drawer from './Drawer';
 import Banner from './Banner';
-import Footer from './Footer';
+// import Footer from './Footer';
 
 import Services from '../../containers/Services';
-import Partners from '../../containers/Partners';
-import ContactUs from '../../containers/Contact';
-import About from '../../screen/About';
+// import Partners from '../../containers/Partners';
+// import ContactUs from '../../containers/Contact';
+// import About from '../../screen/About';
 
 const drawerWidth = '60%';
 
@@ -45,13 +45,7 @@ const styles = theme => ({
   },
   content: {
     flexGrow: 1,
-    // padding: theme.spacing.unit * 3,
   },
-  banner: {
-    height: '600px',
-    backgroundColor: '#252584',
-    display: 'flex',
-  }
 });
 
 class Layout extends React.Component {
@@ -80,12 +74,12 @@ class Layout extends React.Component {
           theme={theme}
         />
         <main className={classes.content}>
-          <Banner classes={classes}/>
+          <Banner/>
           <Services />
-          <About />
+          {/*<About />
           <Partners />
           <ContactUs />
-          <Footer />
+          <Footer />*/}
         </main>
       </div>
     );
