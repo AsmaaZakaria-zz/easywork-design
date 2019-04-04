@@ -9,7 +9,6 @@ import Reviews from '../containers/about/Reviews';
 const styles = theme => ({
   root: {
     marginTop: 150,
-    height: 700
   },
   appBar: {
     position: 'relative',
