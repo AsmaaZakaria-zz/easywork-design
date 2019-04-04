@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core';
 
 import People from '../containers/about/People';
+import Reviews from '../containers/about/Reviews';
+
 
 const styles = theme => ({
   root: {
     marginTop: 150,
+    height: 700
   },
   appBar: {
     position: 'relative',
@@ -57,6 +60,7 @@ const styles = theme => ({
 const About = ({ classes }) => {
   return (
     <div className={classes.root}>
+      <Reviews />
       <People classes={classes}/>
     </div>
   );

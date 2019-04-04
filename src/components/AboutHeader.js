@@ -3,13 +3,10 @@ import PropTypes from 'prop-types';
 import { withStyles, Grid, Typography } from '@material-ui/core';
 
 const styles = theme => ({
-  root: {
-
-  },
   container: {
     paddingLeft: 200,
     [theme.breakpoints.down('sm')]: {
-      paddingLeft: 10,
+      paddingLeft: 45,
       alignItems: 'end'
     },
   },
@@ -42,7 +39,7 @@ const styles = theme => ({
 
 const AboutHeader = ({ classes, header, icon, iconColor}) => {
   return (
-    <div className={classes.root}>
+    <div>
       <Grid container alignItems="center" className={classes.container}>
         <Grid item>
           <div className={classes.icon} style={{backgroundColor: iconColor}}>

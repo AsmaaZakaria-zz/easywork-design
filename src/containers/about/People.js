@@ -8,12 +8,15 @@ import PeopleData from '../../store/People';
 
 import happyIcon from '../../images/icons/happy-face.svg';
 
+// TODO:
+// MOVE PEOPLE STYLE HERE
+
 const PeopleCards = ({ classes }) => {
   return (
     <div className={classes.root}>
       <AboutHeader
         icon={happyIcon}
-        iconColor="red"
+        iconColor="deeppink"
         header="Our important people are listed here"
       />
       <div className={classes.layout}>
@@ -37,7 +40,6 @@ const PeopleCards = ({ classes }) => {
 
 PeopleCards.propTypes = {
   classes: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired,
 };
 
 export default PeopleCards;

@@ -10,7 +10,7 @@ import Banner from './Banner';
 import Services from '../../containers/Services';
 // import Partners from '../../containers/Partners';
 // import ContactUs from '../../containers/Contact';
-// import About from '../../screen/About';
+import About from '../../screen/About';
 
 const drawerWidth = '60%';
 
@@ -76,8 +76,8 @@ class Layout extends React.Component {
         <main className={classes.content}>
           <Banner/>
           <Services />
-          {/*<About />
-          <Partners />
+          <About />
+          {/*<Partners />
           <ContactUs />
           <Footer />*/}
         </main>
