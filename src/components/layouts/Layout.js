@@ -5,7 +5,7 @@ import { withStyles, CssBaseline } from '@material-ui/core';
 import Header from './Header';
 import Drawer from './Drawer';
 import Banner from './Banner';
-// import Footer from './Footer';
+import Footer from './Footer';
 
 import Services from '../../containers/Services';
 import Partners from '../../containers/Partners';
@@ -78,8 +78,8 @@ class Layout extends React.Component {
           <Services />
           <About />
           <Partners />
-          {/*<ContactUs />
-          <Footer />*/}
+          {/*<ContactUs />*/}
+          <Footer />
         </main>
       </div>
     );
