@@ -14,11 +14,19 @@ const styles = theme => ({
   },
   link: {
     margin: theme.spacing.unit,
+    [theme.breakpoints.up('md', 'lg')]: {
+      margin: 15,
+    },
     color: 'white',
+    fontSize: 'large',
+    '&:hover': {
+      textDecoration: 'none',
+      color: 'darkturquoise'
+    }
   },
 });
 
-function Links(props) {
+function HeaderMenu(props) {
   const { classes } = props;
 
   return (
@@ -42,8 +50,8 @@ function Links(props) {
   );
 }
 
-Links.propTypes = {
+HeaderMenu.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Links);
+export default withStyles(styles)(HeaderMenu);
