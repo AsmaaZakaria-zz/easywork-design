@@ -8,6 +8,7 @@ import banner2 from '../../images/banner/banner-rounded-002.svg';
 
 // // TODO:
 // FIX HEADER STYLE BETWEEN 1280 TO 1303
+// CHANGE FONT FAMILY
 
 const styles = theme => ({
   gridContainer: {
@@ -63,15 +64,12 @@ const styles = theme => ({
     color: 'white',
     [theme.breakpoints.down('sm')]: {
       fontSize: '2.5em',
-      color: 'red',
     },
     [theme.breakpoints.between('sm', 'md')]: {
       fontSize: '3em',
-      color: 'green'
     },
     [theme.breakpoints.between('md', 'lg')]: {
       fontSize: '4.5em',
-      color: 'yellow'
     },
   },
   text: {
