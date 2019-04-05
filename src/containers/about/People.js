@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles, Grid, Button } from '@material-ui/core';
+import { withStyles, Grid, Button, Fab } from '@material-ui/core';
 
 import AboutHeader from '../../components/AboutHeader';
 import Card from '../../components/Card';
 import PeopleData from '../../store/People';
 import EditModal from '../../components/EditModal';
+
+import DeleteIcon from '@material-ui/icons/Delete';
 
 import happyIcon from '../../images/icons/happy-face.svg';
 
@@ -22,6 +24,17 @@ const styles = theme => ({
       marginLeft: 'auto',
       marginRight: 'auto',
     },
+  },
+  removebtn: {
+    marginLeft: 20,
+    color: '#FFAB91',
+    backgroundColor: '#FFF9C4',
+  },
+  fab: {
+    margin: theme.spacing.unit,
+    height: 45,
+    width: 45,
+    backgroundColor: '#FBE9E7',
   },
 });
 
@@ -51,6 +64,7 @@ class PeopleCards extends Component {
                     selectedPeople: this.state.selectedPeople+1,
                   });
                 }}
+                className={classes.removebtn}
               >Remove</Button>
               <EditModal
                 person={this.state.person}
@@ -59,7 +73,11 @@ class PeopleCards extends Component {
               />
             </div> :
             <div style={{float: 'right', marginRight: 280, display: 'flex'}}>
-              <Button onClick={() => this.setState({remove: false, selectedPeople: 0})}>Cancel</Button>
+              <Button onClick={() => this.setState({remove: false, selectedPeople: 0})} style={{color: 'grey'}}>Cancel</Button>
+              <Fab className={classes.fab}>
+                <DeleteIcon style={{color: '#D84315'}}/>
+              </Fab>
+
             </div>
         }
 

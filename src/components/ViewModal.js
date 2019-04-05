@@ -24,7 +24,8 @@ const styles = theme => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
     outline: 'none',
-    borderRadius: 35
+    borderRadius: 35,
+    textAlign: 'center',
   },
 });
 
@@ -43,10 +44,10 @@ class ViewModal extends React.Component {
 
   render() {
     const { classes, person } = this.props;
-    console.log('person: ', person);
+
     return (
       <div>
-        <DetailsIcon onClick={this.handleOpen} color="action"/>
+        <DetailsIcon onClick={this.handleOpen} style={{color: '#607D8B'}}/>
         <Modal
           open={this.state.open}
           onClose={this.handleClose}
@@ -56,10 +57,10 @@ class ViewModal extends React.Component {
             <Typography variant="h6" id="modal-title">
               {person.name}
             </Typography>
-            <Typography variant="h6" id="modal-title">
+            <Typography variant="subtitle1" id="modal-title">
               {person.position}
             </Typography>
-            <Typography variant="subtitle1" id="simple-modal-description">
+            <Typography variant="subtitle2" id="simple-modal-description">
               {person.about}
             </Typography>
           </div>

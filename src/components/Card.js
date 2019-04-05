@@ -11,8 +11,8 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'column',
     '&:hover': {
-      backgroundColor: 'cadetblue',
       width: '102%',
+      boxShadow: '7px 9px 22px 0px rgba(92,106,255,0.53)',
     }
   },
   cardMedia: {
@@ -24,25 +24,9 @@ const styles = theme => ({
     margin: 'auto',
     textAlign: 'center',
   },
-  editIcon: {
-    position: 'absolute',
-    // display: 'none'
-  }
 })
 
 class CardPeople extends Component {
-  state = {
-    open: false,
-  };
-
-  handleOpen = () => {
-    this.setState({ open: true });
-  };
-
-  handleClose = () => {
-    this.setState({ open: false });
-  };
-
   render() {
     const { classes, person, remove } = this.props;
 
@@ -55,12 +39,10 @@ class CardPeople extends Component {
         />
         {remove ?
           <Checkbox
-            // checked={this.state.checkedB}
-            // onChange={this.handleChange('checkedB')}
-            // value="checkedB"
             color="primary"
+            style={{position: 'absolute'}}
           /> : ''}
-        <div style={{display: 'flex', position: 'absolute', margin: '5px 0 0 170px'}}>
+        <div style={{display: 'flex', position: 'absolute', margin: '10px 0 0 170px'}}>
           <ViewModal
             person={person}
           />

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Typography, Modal, Button, Divider, FormControl, InputLabel, Input } from '@material-ui/core';
+import { Typography, Modal, Button, Divider, FormControl, InputLabel, Input, Fab } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
@@ -38,6 +38,17 @@ const styles = theme => ({
   cancel: {
     marginRight: 20
   },
+  btn: {
+    marginLeft: 20,
+    color: '#8B72BE',
+    backgroundColor: '#D1C4E9',
+  },
+  fab: {
+    margin: theme.spacing.unit,
+    height: 30,
+    width: 35,
+    backgroundColor: '#FBE9E7',
+  },
 });
 
 class EditModal extends React.Component {
@@ -58,7 +69,10 @@ class EditModal extends React.Component {
 
     return (
       <div>
-        {header === 'Add People' ? <Button onClick={this.handleOpen}>{btn}</Button> : <EditIcon onClick={this.handleOpen} color="primary"/>}
+        {header === 'Add People' ?
+          <Button onClick={this.handleOpen} className={classes.btn}>{btn}</Button> :
+          <EditIcon onClick={this.handleOpen} style={{color:"#607D8B"}}/>
+        }
         <Modal
           open={this.state.open}
           onClose={this.handleClose}
@@ -74,8 +88,11 @@ class EditModal extends React.Component {
               alt={person.name}
               className={classes.img}
             />
-            <div style={{textAlign: 'center'}}>
-              <DeleteIcon className={classes.editIcon} /> Delete picture
+            <div style={{display: 'flex', marginLeft: 90}}>
+              <Fab className={classes.fab}>
+                <DeleteIcon style={{color: '#D84315'}}/>
+              </Fab>
+              <p style={{color: '#D84315'}}>Delete picture</p>
             </div>
 
             <form className={classes.form}>
@@ -96,7 +113,7 @@ class EditModal extends React.Component {
                   Cancel
                 </Button>
                 <Button type="submit" variant="contained" color="primary" className={classes.submit}>
-                  Send
+                  {header === 'Add People' ? 'Add' : 'Edit'}
                 </Button>
               </div>
             </form>
