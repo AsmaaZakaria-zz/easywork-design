@@ -7,12 +7,14 @@ const styles = theme => ({
     marginTop: 20,
     width: '75%',
     marginLeft: 150,
+    // margin: 'auto'
   },
   paper: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
+    height: 500,
   },
   form: {
     width: '100%',
@@ -39,7 +41,7 @@ function ContactForm(props) {
 
           <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="email">Email</InputLabel>
-            <Input id="email" name="email" autoComplete="email" autoFocus />
+            <Input id="email" name="email" autoComplete="email" />
           </FormControl>
 
           <FormControl style={{width: '100%'}}>
@@ -54,7 +56,7 @@ function ContactForm(props) {
 
           <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="email">Message</InputLabel>
-            <Input id="msg" name="msg" autoFocus multiline={true}/>
+            <Input id="msg" name="msg" multiline={true}/>
           </FormControl>
 
           <Button

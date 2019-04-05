@@ -26,11 +26,11 @@ function Contact(props) {
       <Typography className={classes.header} variant="h4" gutterBottom>
         Contact Us
       </Typography>
-      <Grid container justify="center" className={classes.grid} spacing={0}>
-        <Grid item sm>
+      <Grid container justify="center" className={classes.grid} spacing={8}>
+        <Grid item sm={6}>
           <ContactForm />
         </Grid>
-        <Grid item sm>
+        <Grid item sm={6}>
           <Map />
         </Grid>
       </Grid>
