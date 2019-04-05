@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles, Typography, Grid } from '@material-ui/core';
-import { Transition } from 'react-spring/renderprops';
+import { Spring } from 'react-spring/renderprops';
+import VisibilitySensor from "react-visibility-sensor";
 
 import apple from '../images/partners/apple.PNG';
 import airbnb from '../images/partners/airbnb.png';
@@ -14,9 +15,6 @@ import microsoft from '../images/partners/microsoft.PNG';
 
 const PARTNERS = [apple, airbnb, google, nvidia, tesla, samsung, facebook, microsoft];
 
-// TODO:
-// ADD ANIMATION
-
 const styles = theme => ({
   root: {
     marginTop: 100,
@@ -26,34 +24,49 @@ const styles = theme => ({
   }
 });
 
-function Partners(props) {
-  const { classes } = props;
+class Partners extends Component {
 
-  return (
-    <div className={classes.root}>
-      <Typography className={classes.header} variant="h4" gutterBottom>
-        We've worked with
-      </Typography>
-      <div className={classes.layout}>
-          <Grid container style={{marginTop: 20}} justify="center" alignItems="center">
-            {PARTNERS.map((part, index) => (
-              <Transition
-                  items={part} keys={index}
-                  from={{ transform: 'translate3d(0,-40px,0)' }}
-                  enter={{ transform: 'translate3d(0,0px,0)' }}
-                  leave={{ transform: 'translate3d(0,-40px,0)' }}
-                >
-                {part => props => <div style={props}>
-                  <Grid item key={part} style={{marginRight: 20}}>
-                    <img src={part} alt={part}/>
-                  </Grid>
-                </div>}
-              </Transition>
-            ))}
-          </Grid>
-        </div>
-    </div>
-  );
+  componentWillMount() {
+    console.log('componentWillMount');
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
+
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <div className={classes.root}>
+        <Typography className={classes.header} variant="h4" gutterBottom>
+          We've worked with
+        </Typography>
+        <div className={classes.layout}>
+            <Grid container style={{marginTop: 20}} justify="center" alignItems="center">
+              {PARTNERS.map((part, index) => (
+                <VisibilitySensor partialVisibility offset={{ bottom: -400 }}>
+                 {({ isVisible }) => (
+                   <Spring
+                     delay={300}
+                     to={{
+                       opacity: isVisible ? 1 : 0,
+                       transform: isVisible ? "translateY(0)" : "translateY(400px)"
+                     }}
+                   >
+                     {props =>
+                       <Grid item key={part} style={{ marginRight: 20, ...props }}>
+                        <img src={part} alt={part}/>
+                      </Grid>}
+                   </Spring>
+                 )}
+               </VisibilitySensor>
+              ))}
+            </Grid>
+          </div>
+      </div>
+    );
+  }
 }
 
 Partners.propTypes = {
