@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles, Typography, Grid } from '@material-ui/core';
+import { Transition } from 'react-spring/renderprops';
 
 import apple from '../images/partners/apple.PNG';
 import airbnb from '../images/partners/airbnb.png';
@@ -35,10 +36,19 @@ function Partners(props) {
       </Typography>
       <div className={classes.layout}>
           <Grid container style={{marginTop: 20}} justify="center" alignItems="center">
-            {PARTNERS.map(part => (
-              <Grid item key={part} style={{marginRight: 20}}>
-                <img src={part} alt={part}/>
-              </Grid>
+            {PARTNERS.map((part, index) => (
+              <Transition
+                  items={part} keys={index}
+                  from={{ transform: 'translate3d(0,-40px,0)' }}
+                  enter={{ transform: 'translate3d(0,0px,0)' }}
+                  leave={{ transform: 'translate3d(0,-40px,0)' }}
+                >
+                {part => props => <div style={props}>
+                  <Grid item key={part} style={{marginRight: 20}}>
+                    <img src={part} alt={part}/>
+                  </Grid>
+                </div>}
+              </Transition>
             ))}
           </Grid>
         </div>
