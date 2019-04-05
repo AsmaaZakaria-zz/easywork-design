@@ -5,7 +5,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 
 import logo from '../../images/header/logo.png';
-import HeaderMenu from '../HeaderMenu';
+import HeaderMenu from '../headers/HeaderMenu';
 
 const Header = ({handleDrawerToggle, classes}) => {
   return (

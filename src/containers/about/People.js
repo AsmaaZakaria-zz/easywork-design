@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles, Grid, Button, Fab } from '@material-ui/core';
 
-import AboutHeader from '../../components/AboutHeader';
-import Card from '../../components/Card';
+import AboutHeader from '../../components/headers/AboutHeader';
+import Card from '../../components/people/Card';
 import PeopleData from '../../store/People';
-import EditModal from '../../components/EditModal';
+import EditModal from '../../components/people/EditModal';
 
 import DeleteIcon from '@material-ui/icons/Delete';
 

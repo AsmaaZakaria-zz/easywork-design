@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 
-import defaultUser from '../images/defaultuser.png';
+import defaultUser from '../../images/defaultuser.png';
 
 function getModalStyle() {
   const top = 60;

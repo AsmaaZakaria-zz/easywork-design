@@ -5,7 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../../style/style.css";
 
-import AboutHeader from '../../components/AboutHeader';
+import AboutHeader from '../../components/headers/AboutHeader';
 import ReviewCard from '../../components/ReviewCard';
 import ClientReview from '../../store/Clients';
 
