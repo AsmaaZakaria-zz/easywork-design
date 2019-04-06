@@ -16,6 +16,15 @@ const styles = theme => ({
   root: {
     width: '100%',
   },
+  menuButton: {
+    marginRight: 20,
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    },
+  },
+  toolbar: {
+    marginTop: '25px',
+  },
   content: {
     flexGrow: 1,
   },
