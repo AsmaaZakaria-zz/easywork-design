@@ -46,7 +46,7 @@ function Services(props) {
                  delay={100}
                  to={{
                    opacity: isVisible ? 1 : 0,
-                   transform: isVisible ? "translateX(0)" : "translateX(100px)"
+                   transform: isVisible ? "translateX(0)" : "translateX(50px)"
                  }}
                >
                  {props =>
@@ -77,7 +77,7 @@ function Services(props) {
                  delay={50}
                  to={{
                    opacity: isVisible ? 1 : 0,
-                   transform: isVisible ? "translateX(0)" : "translateX(400px)"
+                   transform: isVisible ? "translateX(0)" : "translateX(50px)"
                  }}
                >
                  {props =>
