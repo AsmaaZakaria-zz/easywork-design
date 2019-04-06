@@ -36,10 +36,10 @@ class Partners extends Component {
         <div className={classes.layout}>
             <Grid container style={{marginTop: 20}} justify="center" alignItems="center">
               {PARTNERS.map((part, index) => (
-                <VisibilitySensor offset={{ top: 10 }}>
+                <VisibilitySensor offset={{ top: -150 }}>
                  {({ isVisible }) => (
                    <Spring
-                     delay={300}
+                     delay={50}
                      to={{
                        opacity: isVisible ? 1 : 0,
                        transform: isVisible ? "translateY(0)" : "translateY(400px)"

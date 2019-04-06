@@ -11,7 +11,7 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'column',
     '&:hover': {
-      width: '102%',
+      transform: 'scale(1.1)',
       boxShadow: '7px 9px 22px 0px rgba(92,106,255,0.53)',
     }
   },
