@@ -22,7 +22,7 @@
 }
 
 .carousel.carousel-slider .control-arrow {
-  margin-top: -280px;
+    display: none;
 }
 
 @media (max-width: 850px) {

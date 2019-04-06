@@ -11,9 +11,6 @@ import ClientReview from '../../store/Clients';
 
 import heartIcon from '../../images/icons/heart.svg';
 
-// TODO:
-// MAKE CARESOUL RESPONSIVE
-
 const styles = theme => ({
   carouselContainer: {
     width: '70%',
@@ -35,7 +32,16 @@ const Reviews = (props) => {
         header="What other people say about our services"
       />
       <div className={classes.carouselContainer}>
-      <Carousel centerMode centerSlidePercentage={45} emulateTouch showThumbs={false} showStatus={false} style={{height: '300px'}}>
+      <Carousel
+        centerMode
+        centerSlidePercentage={45}
+        emulateTouch
+        autoPlay
+        infiniteLoop 
+        showThumbs={false}
+        showStatus={false}
+        style={{height: '300px'}}
+      >
         {ClientReview.map(client => {
           return (
             <ReviewCard review={client} />
