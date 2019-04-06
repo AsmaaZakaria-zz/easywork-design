@@ -12,36 +12,9 @@ import Partners from '../../containers/Partners';
 import ContactUs from '../../containers/Contact';
 import About from '../../screen/About';
 
-const drawerWidth = '60%';
-
 const styles = theme => ({
   root: {
     width: '100%',
-  },
-  drawer: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
-  },
-  appBar: {
-    marginLeft: drawerWidth,
-    [theme.breakpoints.up('sm')]: {
-      width: '100%',
-    },
-  },
-  menuButton: {
-    marginRight: 20,
-    [theme.breakpoints.up('sm')]: {
-      display: 'none',
-    },
-  },
-  toolbar: {
-    marginTop: '25px',
-  },
-  drawerPaper: {
-    width: drawerWidth,
   },
   content: {
     flexGrow: 1,
@@ -69,7 +42,6 @@ class Layout extends React.Component {
         />
         <Drawer
           handleDrawerToggle={this.handleDrawerToggle}
-          classes={classes}
           mobileOpen={this.state.mobileOpen}
           theme={theme}
         />
