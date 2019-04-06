@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles, Grid, Typography } from '@material-ui/core';
 import { Spring } from 'react-spring/renderprops';
 import VisibilitySensor from "react-visibility-sensor";
+import ModalImage from 'react-modal-image'
 
 import content1 from '../images/content/content-001.png';
 import content2 from '../images/content/content-002.png';
@@ -23,6 +24,9 @@ const styles = theme => ({
   image: {
     width: 750,
     maxWidth: '80vw',
+    '&:hover': {
+      boxShadow: '7px 9px 22px 0px rgba(92,106,255,0.53)',
+    }
   },
 });
 
@@ -33,7 +37,14 @@ function Services(props) {
     <div className={classes.root}>
       <Grid container className={classes.gridContainer} sm={12} justify="center" alignItems="center">
         <Grid item>
-          <img src={content1} alt="content" className={classes.image}/>
+          <ModalImage
+            alt="Content"
+            small={content1}
+            medium={content1}
+            hideDownload={true}
+            hideZoom={true}
+            className={classes.image}
+          />
         </Grid>
         <Grid item sm>
           <div className={classes.contentContainer}>
@@ -94,7 +105,14 @@ function Services(props) {
           </div>
         </Grid>
         <Grid item>
-          <img src={content2} alt="content" className={classes.image}/>
+          <ModalImage
+            alt="Content"
+            small={content2}
+            medium={content2}
+            hideDownload={true}
+            hideZoom={true}
+            className={classes.image}
+          />
         </Grid>
       </Grid>
     </div>
