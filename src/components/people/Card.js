@@ -24,6 +24,14 @@ const styles = theme => ({
     margin: 'auto',
     textAlign: 'center',
   },
+  icons: {
+    display: 'flex',
+    position: 'absolute',
+    [theme.breakpoints.only('lg')]: {
+      marginLeft: 170,
+    },
+    // marginLeft: 170,
+  }
 })
 
 class CardPeople extends Component {
@@ -42,7 +50,7 @@ class CardPeople extends Component {
             color="primary"
             style={{position: 'absolute'}}
           /> : ''}
-        <div style={{display: 'flex', position: 'absolute', margin: '10px 0 0 170px'}}>
+        <div className={classes.icons}>
           <ViewModal
             person={person}
           />

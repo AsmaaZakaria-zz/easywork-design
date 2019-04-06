@@ -12,7 +12,7 @@ const styles = theme => ({
   root: {
     marginTop: 120,
     height: 150,
-    backgroundColor: '#252584'
+    backgroundColor: '#252584',
   },
   logoContainer: {
     display: 'inline-flex',
@@ -29,6 +29,9 @@ const styles = theme => ({
     margin: 'auto',
     paddingLeft: 20,
     fontSize: '1.7rem',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1rem',
+    },
     color: 'white'
   },
   infoHeader: {

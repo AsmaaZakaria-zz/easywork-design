@@ -7,7 +7,9 @@ const styles = theme => ({
     marginTop: 20,
     width: '75%',
     marginLeft: 150,
-    // margin: 'auto'
+    [theme.breakpoints.down('xs')]: {
+      margin: 'auto'
+    },
   },
   paper: {
     display: 'flex',

@@ -25,15 +25,6 @@ const styles = theme => ({
 });
 
 class Partners extends Component {
-
-  componentWillMount() {
-    console.log('componentWillMount');
-  }
-
-  componentDidMount() {
-    console.log('componentDidMount');
-  }
-
   render() {
     const { classes } = this.props;
 
@@ -45,7 +36,7 @@ class Partners extends Component {
         <div className={classes.layout}>
             <Grid container style={{marginTop: 20}} justify="center" alignItems="center">
               {PARTNERS.map((part, index) => (
-                <VisibilitySensor partialVisibility offset={{ bottom: -400 }}>
+                <VisibilitySensor offset={{ top: 10 }}>
                  {({ isVisible }) => (
                    <Spring
                      delay={300}
@@ -71,7 +62,6 @@ class Partners extends Component {
 
 Partners.propTypes = {
   classes: PropTypes.object.isRequired,
-  handleDrawerToggle: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles, { withTheme: true })(Partners);

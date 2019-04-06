@@ -16,7 +16,7 @@ const drawerWidth = '60%';
 
 const styles = theme => ({
   root: {
-    //
+    width: '100%',
   },
   drawer: {
     display: 'none',

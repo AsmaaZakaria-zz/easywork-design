@@ -22,6 +22,9 @@ const styles = theme => ({
   paper: {
     position: 'absolute',
     width: theme.spacing.unit * 50,
+    [theme.breakpoints.down('xs')]: {
+      width: theme.spacing.unit * 35,
+    },
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
@@ -33,6 +36,9 @@ const styles = theme => ({
     borderRadius: '50%',
     display: 'block',
     marginLeft: 90,
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: 50,
+    },
     marginTop: 15
   },
   cancel: {
@@ -49,6 +55,13 @@ const styles = theme => ({
     width: 35,
     backgroundColor: '#FBE9E7',
   },
+  delImgContainer: {
+    display: 'flex',
+    marginLeft: 90,
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: 20,
+    },
+  }
 });
 
 class EditModal extends React.Component {
@@ -88,7 +101,7 @@ class EditModal extends React.Component {
               alt={person.name}
               className={classes.img}
             />
-            <div style={{display: 'flex', marginLeft: 90}}>
+            <div className={classes.delImgContainer}>
               <Fab className={classes.fab}>
                 <DeleteIcon style={{color: '#D84315'}}/>
               </Fab>

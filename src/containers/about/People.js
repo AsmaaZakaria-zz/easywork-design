@@ -36,6 +36,14 @@ const styles = theme => ({
     width: 45,
     backgroundColor: '#FBE9E7',
   },
+  btnContainer: {
+    float: 'right',
+    marginRight: theme.spacing.unit * 37,
+    [theme.breakpoints.down('xs')]: {
+      marginRight: 85,
+    },
+    display: 'flex',
+  }
 });
 
 class PeopleCards extends Component {
@@ -57,7 +65,7 @@ class PeopleCards extends Component {
         />
         {
           this.state.selectedPeople === 0 ?
-            <div style={{float: 'right', marginRight: 280, display: 'flex'}}>
+            <div className={classes.btnContainer}>
               <Button
                 onClick={() => { this.setState({
                     remove: true,
@@ -72,7 +80,7 @@ class PeopleCards extends Component {
                 btn="Add"
               />
             </div> :
-            <div style={{float: 'right', marginRight: 280, display: 'flex'}}>
+            <div className={classes.btnContainer}>
               <Button onClick={() => this.setState({remove: false, selectedPeople: 0})} style={{color: 'grey'}}>Cancel</Button>
               <Fab className={classes.fab}>
                 <DeleteIcon style={{color: '#D84315'}}/>

@@ -24,3 +24,9 @@
 .carousel.carousel-slider .control-arrow {
   margin-top: -280px;
 }
+
+@media (max-width: 850px) {
+  .carousel .slider-wrapper.axis-horizontal .slider .slide {
+    min-width: 90%!important;
+  }
+}
