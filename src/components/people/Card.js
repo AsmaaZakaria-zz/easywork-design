@@ -30,7 +30,9 @@ const styles = theme => ({
     [theme.breakpoints.only('lg')]: {
       marginLeft: 170,
     },
-    // marginLeft: 170,
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: 100,
+    },
   }
 })
 
